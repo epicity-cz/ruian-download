@@ -1,0 +1,2 @@
+#!/bin/bash
+ls RUIANToolbox-2.00.00/DownloadedData/data/????????_OB* | xargs -I {} -n 1 -P 8 bash -c 'NAME=$(basename {}); unzip -p {} | xsltproc trans.xslt - >output/${NAME:12:6}.csv'
